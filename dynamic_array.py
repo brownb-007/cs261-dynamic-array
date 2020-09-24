@@ -1,6 +1,6 @@
 # DynamicArray: An array that grows to accommodate new elements.
 # Your implementation should pass the tests in test_dynamic_array.py.
-# YOUR NAME
+# Brayden Brown
 
-class FixMe:
+class DynamicArray:
     pass
