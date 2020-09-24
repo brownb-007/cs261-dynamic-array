@@ -3,4 +3,5 @@
 # Brayden Brown
 
 class DynamicArray:
+    capacity = 10
     pass
