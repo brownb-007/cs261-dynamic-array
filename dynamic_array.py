@@ -4,8 +4,11 @@
 
 class DynamicArray:
     capacity = 10
-    
+
     def is_empty(self):
         return True
+
+    def __len__(self):
+        return 0
 
     pass
