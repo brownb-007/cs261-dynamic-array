@@ -6,19 +6,25 @@ import numpy as np
 
 class DynamicArray:
 
-    capacity = 10
-    data = np.empty(capacity,dtype= 'O')
+    def __init__(self):
+        self.capacity = 10
+        self.data = np.empty(self.capacity, dtype=np.object)
+        self.next_index = 0
 
     def is_empty(self):
-        return True
+        if self.next_index == 0:
+            return True
+        return False
 
     def __len__(self):
-        return 0
+        return self.next_index
 
     def append(self, value):
-        myArray=value
+        self.data[self.next_index] = value
+        self.next_index += 1
 
     def __getitem__(self, index):
-        return 42
-
+        if not 0 <= index < self.next_index:
+            raise IndexError("IndexError: index out of range.")
+        return self.data[index]
     pass
