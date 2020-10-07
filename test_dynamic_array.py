@@ -180,18 +180,18 @@ class TestDynamicArray(unittest.TestCase):
         self.assertEqual('fo', a[2])
         self.assertEqual('funk', a[3])
 
-    # """
-    # Emptiness, len and clearing
-    # """
+    """
+    Emptiness, len and clearing
+    """
 
-    # def test_is_empty(self):
-    #     """
-    #     A dynamic array containing data is not empty.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertTrue(a.is_empty())
-    #     a.append('FAKE')
-    #     self.assertFalse(a.is_empty())
+    def test_is_empty(self):
+        """
+        A dynamic array containing data is not empty.
+        """
+        a = DynamicArray()
+        self.assertTrue(a.is_empty())
+        a.append('FAKE')
+        self.assertFalse(a.is_empty())
 
     # def test_clear(self):
     #     """
