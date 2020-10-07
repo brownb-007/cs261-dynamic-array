@@ -25,6 +25,6 @@ class DynamicArray:
 
     def __getitem__(self, index):
         if not 0 <= index < self.next_index:
-            raise IndexError("IndexError: index out of range.")
+            raise IndexError("IndexError: index out of range." )
         return self.data[index]
     pass
