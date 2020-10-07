@@ -193,26 +193,26 @@ class TestDynamicArray(unittest.TestCase):
         a.append('FAKE')
         self.assertFalse(a.is_empty())
 
-    # def test_clear(self):
-    #     """
-    #     A cleared dynamic array is empty and has a length of 0.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('FAKE')
-    #     a.append('FAKE')
-    #     self.assertFalse(a.is_empty())
-    #     a.clear()
-    #     self.assertTrue(a.is_empty())
-    #     self.assertEqual(0, len(a))
+    def test_clear(self):
+        """
+        A cleared dynamic array is empty and has a length of 0.
+        """
+        a = DynamicArray()
+        a.append('FAKE')
+        a.append('FAKE')
+        self.assertFalse(a.is_empty())
+        a.clear()
+        self.assertTrue(a.is_empty())
+        self.assertEqual(0, len(a))
 
-    # def test_len(self):
-    #     """
-    #     The length of a dynamic array is equal to the number of elements appended.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('FAKE')
-    #     a.append('FAKE')
-    #     self.assertEqual(2, len(a))
+    def test_len(self):
+        """
+        The length of a dynamic array is equal to the number of elements appended.
+        """
+        a = DynamicArray()
+        a.append('FAKE')
+        a.append('FAKE')
+        self.assertEqual(2, len(a))
 
     # """
     # Invalid indexes
@@ -229,16 +229,16 @@ class TestDynamicArray(unittest.TestCase):
         except IndexError:
             pass
 
-    # def test_large_index(self):
-    #     """
-    #     Accessing with an index greater than or equal to the last index raises an IndexError
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a[0]
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_large_index(self):
+        """
+        Accessing with an index greater than or equal to the last index raises an IndexError
+        """
+        a = DynamicArray()
+        try:
+            a[0]
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # """
     # Removing elements from the end

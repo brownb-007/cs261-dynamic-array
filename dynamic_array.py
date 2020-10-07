@@ -27,4 +27,8 @@ class DynamicArray:
         if not 0 <= index < self.next_index:
             raise IndexError("IndexError: index out of range.")
         return self.data[index]
+
+    def clear(self):
+        self.next_index = 0
+        
     pass
