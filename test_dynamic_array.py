@@ -218,16 +218,16 @@ class TestDynamicArray(unittest.TestCase):
     # Invalid indexes
     # """
 
-    # def test_negative_index(self):
-    #     """
-    #     Accessing with a negative index raises an IndexError
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a[-1]
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_negative_index(self):
+        """
+        Accessing with a negative index raises an IndexError
+        """
+        a = DynamicArray()
+        try:
+            a[-1]
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # def test_large_index(self):
     #     """
