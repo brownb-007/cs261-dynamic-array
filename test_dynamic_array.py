@@ -240,32 +240,32 @@ class TestDynamicArray(unittest.TestCase):
         except IndexError:
             pass
 
-    # """
-    # Removing elements from the end
-    # """
+    """
+    Removing elements from the end
+    """
 
-    # def test_pop(self):
-    #     """
-    #     Popping removes and returns the last element
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     last_element = a.pop()
-    #     self.assertEqual('fo', last_element)
-    #     self.assertEqual(2, len(a))
+    def test_pop(self):
+        """
+        Popping removes and returns the last element
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        last_element = a.pop()
+        self.assertEqual('fo', last_element)
+        self.assertEqual(2, len(a))
 
-    # def test_pop_empty(self):
-    #     """
-    #     Popping from an empty list raises an IndexError: pop from empty array
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a.pop()
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_pop_empty(self):
+        """
+        Popping from an empty list raises an IndexError: pop from empty array
+        """
+        a = DynamicArray()
+        try:
+            a.pop()
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # """
     # Deleting

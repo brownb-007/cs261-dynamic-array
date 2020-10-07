@@ -30,5 +30,11 @@ class DynamicArray:
 
     def clear(self):
         self.next_index = 0
-        
+
+    def pop(self):
+        if self.next_index == 0:
+            raise IndexError("IndexError: index out of range.") 
+        self.next_index -= 1
+        return self.data[self.next_index]
+
     pass
