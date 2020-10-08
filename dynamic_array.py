@@ -52,4 +52,8 @@ class DynamicArray:
             return True
         return False
 
+    def increase_capacity(self):
+        
+        
+
     pass
