@@ -47,4 +47,9 @@ class DynamicArray:
         else:
             raise IndexError("IndexError: index out of range.")
 
+    def is_full(self):
+        if self.next_index == self.capacity:
+            return True
+        return False
+
     pass

@@ -406,38 +406,38 @@ class TestDynamicArray(unittest.TestCase):
     #     self.assertEqual(1, len(a))
     #     self.assertEqual('foo', a[0])
 
-    # """
-    # Fullness
-    # """
+    """
+    Fullness
+    """
 
-    # def test_empty_not_full(self):
-    #     """
-    #     An empty dynamic array is not full.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertFalse(a.is_full())
+    def test_empty_not_full(self):
+        """
+        An empty dynamic array is not full.
+        """
+        a = DynamicArray()
+        self.assertFalse(a.is_full())
 
-    # def test_less_than_capacity(self):
-    #     """
-    #     A dynamic array with a number of elements less than capacityis not full.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     self.assertTrue(len(a) < a.capacity)
-    #     self.assertFalse(a.is_full())
+    def test_less_than_capacity(self):
+        """
+        A dynamic array with a number of elements less than capacityis not full.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        self.assertTrue(len(a) < a.capacity)
+        self.assertFalse(a.is_full())
 
-    # def test_full(self):
-    #     """
-    #     A dynamic array is full when the number of elements fills its internal data array
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, a.capacity):
-    #         a.append('fake')
-    #     self.assertEqual(10, len(a))
-    #     self.assertEqual(10, a.next_index)
-    #     self.assertEqual(len(a), a.capacity)
-    #     self.assertTrue(a.is_full())
+    def test_full(self):
+        """
+        A dynamic array is full when the number of elements fills its internal data array
+        """
+        a = DynamicArray()
+        for _ in range(0, a.capacity):
+            a.append('fake')
+        self.assertEqual(10, len(a))
+        self.assertEqual(10, a.next_index)
+        self.assertEqual(len(a), a.capacity)
+        self.assertTrue(a.is_full())
 
     # """
     # Increasing capacity
