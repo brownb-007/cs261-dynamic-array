@@ -40,7 +40,7 @@ class DynamicArray:
 
     def delete(self, index):
         if 0 <= index < self.next_index:
-            return True
+            
         else:
             raise IndexError("IndexError: index out of range.")
 
