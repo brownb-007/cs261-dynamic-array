@@ -12,14 +12,13 @@ class DynamicArray:
         self.next_index = 0
 
     def is_empty(self):
-        if self.next_index == 0:
-            return True
-        return False
+        return self.next_index == 0
 
     def __len__(self):
         return self.next_index
 
     def append(self, value):
+        self.increase_capacity()
         self.data[self.next_index] = value
         self.next_index += 1
 
@@ -40,20 +39,25 @@ class DynamicArray:
 
     def delete(self, index):
         if 0 <= index < self.next_index:
-            for i in range(index, self.next_index-1):
-                 self.data[i] = self.data[i + 1]
-            self.data[self.next_index - 1] = None
+            for i in range(index, self.next_index - 1):
+                 self.data[i] = self.data[i + 1] 
             self.next_index -= 1 
         else:
             raise IndexError("IndexError: index out of range.")
 
     def is_full(self):
-        if self.next_index == self.capacity:
-            return True
-        return False
+        return self.next_index == self.capacity
 
     def increase_capacity(self):
-        
+        new_arr_capacity = self.capacity*2
+        if self.is_full():
+            new_array = np.empty(new_arr_capacity, dtype=np.object)
+            for i, x in enumerate(self.data):
+                new_array[i] = x
+            self.data = new_array
+            self.capacity = new_arr_capacity
+
+
         
 
     pass

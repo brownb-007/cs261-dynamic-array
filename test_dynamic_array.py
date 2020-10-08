@@ -453,16 +453,16 @@ class TestDynamicArray(unittest.TestCase):
         a.append('new value')
         self.assertEqual('new value', a[10])
 
-    # def test_new_capacity(self):
-    #     """
-    #     When expanding, a dynamic array doubles its capacity
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, a.capacity):
-    #         a.append('fake')
-    #     old_capacity = a.capacity
-    #     a.append('new value')
-    #     self.assertEqual(2 * old_capacity, a.capacity)
+    def test_new_capacity(self):
+        """
+        When expanding, a dynamic array doubles its capacity
+        """
+        a = DynamicArray()
+        for _ in range(0, a.capacity):
+            a.append('fake')
+        old_capacity = a.capacity
+        a.append('new value')
+        self.assertEqual(2 * old_capacity, a.capacity)
 
     # def test_insert_to_full(self):
     #     """
