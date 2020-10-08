@@ -40,7 +40,10 @@ class DynamicArray:
 
     def delete(self, index):
         if 0 <= index < self.next_index:
-            
+            for i in range(index, self.next_index-1):
+                 self.data[i] = self.data[i + 1]
+            self.data[self.next_index - 1] = None
+            self.next_index -= 1 
         else:
             raise IndexError("IndexError: index out of range.")
 
