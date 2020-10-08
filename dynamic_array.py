@@ -24,9 +24,10 @@ class DynamicArray:
         self.next_index += 1
 
     def __getitem__(self, index):
-        if not 0 <= index < self.next_index:
+        if 0 <= index < self.next_index:
+            return self.data[index]
+        else:
             raise IndexError("IndexError: index out of range.")
-        return self.data[index]
 
     def clear(self):
         self.next_index = 0
@@ -36,5 +37,11 @@ class DynamicArray:
             raise IndexError("IndexError: index out of range.") 
         self.next_index -= 1
         return self.data[self.next_index]
+
+    def delete(self, index):
+        if 0 <= index < self.next_index:
+            return True
+        else:
+            raise IndexError("IndexError: index out of range.")
 
     pass
