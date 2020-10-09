@@ -46,7 +46,7 @@ class DynamicArray:
             raise IndexError("IndexError: index out of range.")
 
     def is_full(self):
-        return self.next_index == self.capacity
+        return self.next_index >= self.capacity
 
     def increase_capacity(self):
         new_arr_capacity = self.capacity*2
@@ -57,7 +57,17 @@ class DynamicArray:
             self.data = new_array
             self.capacity = new_arr_capacity
 
-
-        
+    def insert(self, index, value):
+        if 0 <= index <= self.next_index:
+            self.next_index += 1
+            print(self.data)
+            if self.is_full():
+                self.increase_capacity()
+            for i in range(self.next_index, index):
+                self.data[i] = self.data[i - 1]
+            self.data[index] = value
+            print(self.data)
+        else:
+            raise IndexError("IndexError: index out of range.")
 
     pass
