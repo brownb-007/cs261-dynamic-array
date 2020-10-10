@@ -70,4 +70,10 @@ class DynamicArray:
         else:
             raise IndexError("IndexError: index out of range.")
 
+    def linear_search(self, value):
+        for i, x in enumerate(self.data):
+            if x == value:
+                return i
+        return None
+
     pass

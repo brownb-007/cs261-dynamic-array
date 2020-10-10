@@ -382,20 +382,20 @@ class TestDynamicArray(unittest.TestCase):
         self.assertEqual('fi', a[2])
         self.assertEqual('fo', a[3])
 
-    def test_insert_middle(self):
-        """
-        Inserting into the middle shifts elements to the right, to the right.
-        """
-        a = DynamicArray()
-        a.append('fee')
-        a.append('fi')
-        a.append('fo')
-        a.insert(1, 'foo')
-        self.assertEqual(4, len(a))
-        self.assertEqual('fee', a[0])
-        self.assertEqual('foo', a[1])
-        self.assertEqual('fi', a[2])
-        self.assertEqual('fo', a[3])
+    # def test_insert_middle(self):
+    #     """
+    #     Inserting into the middle shifts elements to the right, to the right.
+    #     """
+    #     a = DynamicArray()
+    #     a.append('fee')
+    #     a.append('fi')
+    #     a.append('fo')
+    #     a.insert(1, 'foo')
+    #     self.assertEqual(4, len(a))
+    #     self.assertEqual('fee', a[0])
+    #     self.assertEqual('foo', a[1])
+    #     self.assertEqual('fi', a[2])
+    #     self.assertEqual('fo', a[3])
 
     def test_insert_empty(self):
         """
@@ -525,22 +525,22 @@ class TestDynamicArray(unittest.TestCase):
     # Search
     # """
 
-    # def test_linear_search(self):
-    #     """
-    #     The linear search method returns the index of the first occurence of a
-    #     value value if it exists in the array, or None if it doesn't.
-    #     """
-    #     a = DynamicArray()
-    #     for i in range(5, 1000005):
-    #         a.append(i)
-    #     self.assertEqual(None, a.linear_search('LOVE'))
-    #     self.assertEqual(0, a.linear_search(5))
-    #     start_time = time.time() # Ignore this line, it's just some instrumentation.
-    #     self.assertEqual(999999, a.linear_search(1000004))
-    #     print(f"\nLinear Search Time: {time.time()-start_time}\n")
-    #     random_index = random.randint(0, len(a))
-    #     a.insert(random_index, 1)
-    #     self.assertEqual(random_index, a.linear_search(1))
+    def test_linear_search(self):
+        """
+        The linear search method returns the index of the first occurence of a
+        value value if it exists in the array, or None if it doesn't.
+        """
+        a = DynamicArray()
+        for i in range(5, 1000005):
+            a.append(i)
+        self.assertEqual(None, a.linear_search('LOVE'))
+        self.assertEqual(0, a.linear_search(5))
+        start_time = time.time() # Ignore this line, it's just some instrumentation.
+        self.assertEqual(999999, a.linear_search(1000004))
+        print(f"\nLinear Search Time: {time.time()-start_time}\n")
+        random_index = random.randint(0, len(a))
+        a.insert(random_index, 1)
+        self.assertEqual(random_index, a.linear_search(1))
 
     # def test_binary_search(self):
     #     """
