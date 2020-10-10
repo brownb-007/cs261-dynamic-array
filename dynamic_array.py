@@ -63,7 +63,7 @@ class DynamicArray:
             print(self.data)
             if self.is_full():
                 self.increase_capacity()
-            for i in range(self.next_index, index):
+            for i in range(self.next_index, index, -1):
                 self.data[i] = self.data[i - 1]
             self.data[index] = value
             print(self.data)
