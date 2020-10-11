@@ -72,7 +72,6 @@ class DynamicArray:
         for i, x in enumerate(self.data):
             if x == value:
                 return i
-        return None
 
     def max(self):
         max_value = self.data[0]
@@ -111,6 +110,5 @@ class DynamicArray:
                 begining = middle
             else:
                 end = middle
-        return None
 
     pass
