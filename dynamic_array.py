@@ -9,7 +9,7 @@ class DynamicArray:
     def __init__(self):
         self.capacity = 10
         self.data = np.empty(self.capacity, dtype=np.object)
-        self.next_index = 0
+        self.next_index = 0 
 
     def is_empty(self):
         return self.next_index == 0
