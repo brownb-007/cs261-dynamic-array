@@ -39,7 +39,7 @@ class DynamicArray:
 
     def delete(self, index):
         if 0 <= index < self.next_index:
-            for i in range(index, self.next_index - 1):
+            for i in range(index, self.next_index):
                  self.data[i] = self.data[i + 1] 
             self.next_index -= 1 
         else:
@@ -99,4 +99,18 @@ class DynamicArray:
         if summed_array == 0:
             return None
         return summed_array
+
+    def binary_search(self, value):
+        begining = 0
+        end = self.next_index
+        while begining <= end:
+            middle = int((begining + end) / 2)
+            if self.data[middle] == value:
+                return middle
+            if self.data[middle] < value:
+                begining = middle
+            else:
+                end = middle
+        return None
+
     pass
