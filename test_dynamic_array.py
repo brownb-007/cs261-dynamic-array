@@ -521,9 +521,9 @@ class TestDynamicArray(unittest.TestCase):
         self.assertEqual(None, a.min())
         self.assertEqual(None, a.max())
 
-    # """
-    # Search
-    # """
+    """
+    Search
+    """
 
     def test_linear_search(self):
         """
