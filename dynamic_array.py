@@ -77,18 +77,18 @@ class DynamicArray:
     def max(self):
         max_value = self.data[0]
         for i in self.data:
-            if i == None:
+            if i == None or i < max_value:
                 True
-            elif i > max_value:
+            else:
                 max_value = i
         return max_value
 
     def min(self):
         min_value = self.data[0]
         for i in self.data:
-            if i == None:
+            if i == None or i > min_value:
                 True
-            elif i < min_value:
+            else:
                 min_value = i
         return min_value
 
