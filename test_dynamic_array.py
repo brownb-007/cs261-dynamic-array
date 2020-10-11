@@ -214,9 +214,9 @@ class TestDynamicArray(unittest.TestCase):
         a.append('FAKE')
         self.assertEqual(2, len(a))
 
-    # """
-    # Invalid indexes
-    # """
+    """
+    Invalid indexes
+    """
 
     def test_negative_index(self):
         """
