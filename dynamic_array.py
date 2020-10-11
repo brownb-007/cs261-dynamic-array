@@ -26,14 +26,14 @@ class DynamicArray:
         if 0 <= index < self.next_index:
             return self.data[index]
         else:
-            raise IndexError("IndexError: index out of range.")
+            raise (IndexError)
 
     def clear(self):
         self.next_index = 0
 
     def pop(self):
         if self.next_index == 0:
-            raise IndexError("IndexError: index out of range.") 
+            raise (IndexError) 
         self.next_index -= 1
         return self.data[self.next_index]
 
@@ -43,7 +43,7 @@ class DynamicArray:
                  self.data[i] = self.data[i + 1] 
             self.next_index -= 1 
         else:
-            raise IndexError("IndexError: index out of range.")
+            raise (IndexError)
 
     def is_full(self):
         return self.next_index >= self.capacity
@@ -66,7 +66,7 @@ class DynamicArray:
                 self.data[i] = self.data[i - 1]
             self.data[index] = value
         else:
-            raise IndexError("IndexError: index out of range.")
+            raise (IndexError)
 
     def linear_search(self, value):
         for i, x in enumerate(self.data):
@@ -78,7 +78,7 @@ class DynamicArray:
         max_value = self.data[0]
         for i in self.data:
             if i == None:
-                pass
+                True
             elif i > max_value:
                 max_value = i
         return max_value
@@ -87,9 +87,16 @@ class DynamicArray:
         min_value = self.data[0]
         for i in self.data:
             if i == None:
-                pass
+                True
             elif i < min_value:
                 min_value = i
         return min_value
 
+    def sum(self):
+        summed_array = 0
+        for i in range(self.next_index):
+            summed_array += self.data[i]
+        if summed_array == 0:
+            return None
+        return summed_array
     pass
