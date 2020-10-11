@@ -60,13 +60,11 @@ class DynamicArray:
     def insert(self, index, value):
         if 0 <= index <= self.next_index:
             self.next_index += 1
-            print(self.data)
             if self.is_full():
                 self.increase_capacity()
             for i in range(self.next_index, index, -1):
                 self.data[i] = self.data[i - 1]
             self.data[index] = value
-            print(self.data)
         else:
             raise IndexError("IndexError: index out of range.")
 
@@ -75,5 +73,23 @@ class DynamicArray:
             if x == value:
                 return i
         return None
+
+    def max(self):
+        max_value = self.data[0]
+        for i in self.data:
+            if i == None:
+                pass
+            elif i > max_value:
+                max_value = i
+        return max_value
+
+    def min(self):
+        min_value = self.data[0]
+        for i in self.data:
+            if i == None:
+                pass
+            elif i < min_value:
+                min_value = i
+        return min_value
 
     pass
